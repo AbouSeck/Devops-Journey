@@ -1,0 +1,13 @@
+Docker commands to run the containers : 
+
+First of all we create our private network : docker network create external-api 
+
+
+    - For Mysql container : ~ docker run -d -p 6033:3306 --network=external-api --name=mysql-docker --env="MYSQL_ROOT_PASSWORD=root" --env="MYSQL_PASSWORD=root" --env="MYSQL_DATABASE=crudusers" mysql (Créer/Lancer le container "mysql-docker" dans notre réseau privé)
+                            ~ docker exec -i mysql-docker mysql -u root -proot crudusers < crudusers.sql (Importer la base de donnée)
+
+    - For Api container :   ~ docker build -f DockerFile -t rest-docker . (Créer l'image de notre api à partir du .jar)
+                            ~ docker run -t --network "external-api" --name "api" --link mysql-docker:mysql -p 9090:9090 rest-docker (Créer/Lancer le container "api" dans notre réseau privé)
+
+    - For App container :   ~ docker build -f DockerFile -t webapp-docker . (Créer l'image de notre api à partir du .jar)
+                            ~ docker run -t --network "external-api" --name "app" -p 9091:9091 webapp-docker (Créer/Lancer le container "app" dans notre réseau privé)
