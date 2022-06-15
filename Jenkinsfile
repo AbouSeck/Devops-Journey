@@ -8,7 +8,7 @@ pipeline {
                 sh 'echo "#-BUILD"'
                 sh 'echo ""'
                 sh 'echo "..... Build Phase Started :: Compiling REST API Source Code :: ......"'
-                sh 'cd SpringBoot\ CRUD\ with\ REST\ Api/rest'
+                sh 'cd Springbot_crud_webapp/rest'
                 sh 'mvn clean install'
                 sh 'cd ../webapp'
                 sh 'mvn clean install'
