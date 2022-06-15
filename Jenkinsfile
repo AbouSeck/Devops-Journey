@@ -4,25 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'rm -rf build'
-                sh 'mkdir build'
-                sh 'touch build/car.txt'
-                sh 'echo "chassis" >> build/car.txt'
-                sh 'echo "engine" >> build/car.txt'
-                sh 'echo "body" >> build/car.txt'
-            }
-        }
-        stage('Test') {
-            steps{
-                sh 'test -f build/car.txt'
-                sh 'grep "chassis" build/car.txt'
-                sh 'grep "engine" build/car.txt'
-                sh 'grep "body" build/car.txt'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                archiveArtifacts artifacts: 'build/'
+                sh 'echo "*******-Starting CI CD Pipeline Tasks-*******"'
+                sh 'echo "#-BUILD"'
+                sh 'echo ""'
+                sh 'echo "..... Build Phase Started :: Compiling REST API Source Code :: ......"'
+                sh 'cd SpringBoot\ CRUD\ with\ REST\ Api/rest'
+                sh 'mvn clean install'
+                sh 'cd ../webapp'
+                sh 'mvn clean install'
             }
         }
     }
