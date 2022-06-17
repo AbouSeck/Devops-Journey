@@ -1,9 +1,7 @@
 pipeline {
-    agent {label 'centos'}
+    agent {label 'wsl'}
     
-    tools {
-        maven "Maven 3"
-    }
+
 
     stages {
         stage('Build') {
