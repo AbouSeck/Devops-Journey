@@ -1,4 +1,4 @@
 FROM openjdk:11
-ADD target/rest-0.0.2-SNAPSHOT.jar rest-demo-docker.jar
+ADD target/rest-0.0.2-SNAPSHOT.jar rest-docker.jar
 EXPOSE 9090
-ENTRYPOINT ["java","-jar","rest-demo-docker.jar"]
+ENTRYPOINT ["java","-jar","rest-docker.jar"]
