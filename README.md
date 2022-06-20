@@ -8,9 +8,9 @@ This project contains :
 
 We can clone this repo and run the project with Intellij or simply pull the docker images from Docker Hub and run the containers. 
 
-To pull the project : 
+To pull the project from Docker Hub : 
 
-          ~ docker pull aboutaro/springboot-rest-crudapp
+          ~ docker pull aboutaro/springboot-rest-crudapp:("mysql_data", "api_container", "webapp_container")
 
 Docker commands to build images and run the containers : 
 
