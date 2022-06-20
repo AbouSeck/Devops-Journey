@@ -8,7 +8,7 @@ pipeline {
                 echo "#-BUILD"
                 echo "#-BUILD REST API"
                 echo ""
-                echo "..... Build Phase Started :: Compiling REST API Source Code :: ......"
+                echo "..... Build Phase Started :: Compiling REST API Source Code and Building JAR file :: ......"
                 sh '''
                     cd Springboot_crud_webapp/rest
                     mvn clean install -DskipTests
