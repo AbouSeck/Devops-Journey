@@ -1,6 +1,4 @@
 # Devops-Journey
-This will be the main repository for all my test and tutorials for my DevOps Learning journey
-
 In this branch, we have a simple Springboot CRUD webapp using Mysql and a Rest API.
 
 This project contains :
