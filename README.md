@@ -1,8 +1,9 @@
 # Devops-Journey
-In this branch, we have a simple Springboot CRUD webapp using Mysql and a Rest API.
+In this branch, we have a simple Springboot CRUD WebApp using Mysql and a Rest API.
 
 This project contains :
 - The crudusers.sql file to import the database 
+- The Jenkins file
 - The rest folder with the code of our API
 - The webapp folder with the code of our webapp
 
