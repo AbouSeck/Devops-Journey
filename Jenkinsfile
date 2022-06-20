@@ -12,7 +12,7 @@ pipeline {
                 echo "..... Build Phase Started :: Compiling REST API Source Code :: ......"
                 sh '''
                     cd Springboot_crud_webapp/rest
-                    mvn clean install
+                    mvn clean install -DskipTests
                 '''
             }
         }
