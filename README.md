@@ -6,6 +6,7 @@ This project contains :
 - The Jenkins file
 - The rest folder with the code of our API
 - The webapp folder with the code of our webapp
+- The expoted Jenkins Jobs folder
 
 We can clone this repo and run the project with Intellij or simply pull the docker images from Docker Hub and run the containers. 
 
