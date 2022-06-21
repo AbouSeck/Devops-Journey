@@ -1,0 +1,18 @@
+version: '3'
+services:
+  mysql-docker:
+    image: mysql/mysql-server
+    ports:
+      - 6033:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_DATABASE=crudusers
+  api:
+    image: rest-docker
+    ports:
+      - 9090:9090
+  app:
+    image: webapp-docker
+    ports:
+      - 9091:9091
