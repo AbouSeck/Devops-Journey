@@ -1,5 +1,7 @@
 **This is our Crud Webapp Pipeline Job's folder.**
 
+![Jobs in home](/Capture%20d%E2%80%99%C3%A9cran%20(8).png] "The 5 Jobs")
+
 We have our five jobs in XML Format : 
    - Job1.xml : RunMysqlServer Job
    - Job2.xml : BuildAPIRest Job
@@ -15,3 +17,5 @@ To import this jobs :
         
          java -jar jenkins-cli.jar -s {jenkins url} -auth {username}:{password} create-job {newjobname} < {path to Jobs Folder}/{Job-want-import}.xml
 
+
+![Crud WebApp Pipeline](Capture%20d%E2%80%99%C3%A9cran%20(9).png?raw=true "The Pipeline")
