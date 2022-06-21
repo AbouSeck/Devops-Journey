@@ -1,0 +1,49 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@4.11.3">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>git@github.com:AbouSeck/Devops-Journey.git</url>
+        <credentialsId>jenkins-wsl-sshkey</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>refs/remotes/origin/crud-webapp</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="empty-list"/>
+    <extensions/>
+  </scm>
+  <assignedNode>wsl</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>echo &quot;*******-Starting CI CD Pipeline Tasks-*******&quot;
+echo &quot;#-BUILD PHASE&quot;
+echo &quot;#-RUN WebApp&quot;
+echo &quot;..... Build Phase Started :: Running WebApp Container  :: ......&quot;
+docker rm -f webapp | true
+docker run -d -t --network &quot;external-api&quot; --name &quot;webapp&quot; -p 9091:9091 webapp-docker
+
+#-Completion
+echo &quot;--------------------------------------------------------&quot;
+echo &quot;View App deployed here: http://localhost:9091/&quot;
+echo &quot;--------------------------------------------------------&quot;</command>
+      <configuredLocalRules/>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
